@@ -6,19 +6,48 @@
     <title>ootidy</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,500&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>ootdify</h1>
-    <p>Post your daily fit checks</p>
-
-    <div class="controls">
-        <input type="text" placeholder="say something about the fit">
-        <button id="postButton">Post</button>
+    <div id="loading" class="screen loadingScreen">
+        <h1 id="loadingHeader">ootidify</h1>
+        <p id="loadingText" class="loadingText">Loading...</p>
     </div>
 
-    <p id="heartCount">Hearts: 0</p>
-    
-    <img src="https://placehold.co/200" alt="outfit photo placeholder">
+    <div id="login" class="screen loginScreen">
+        <h1 id="loginHeader">ootidify</h1>
+        <div class="loginRow">
+            <button id="signInButton">Sign In</button>
+            <button id="signUpButton">Sing Up</button>
+        </div>
+    </div>
+
+    <div id="signIn" class="screen signInScreen">
+        <h1 id="signInHeader">Sign In</h1>
+        <input id="usernameInput" type="text" class="loginField" placeholder="Enter your username">
+        <input id="passwordInput" type="password" class="loginField" placeholder="Enter your password">
+        <button id="loginButton" class="loginButton">Login</button>
+    </div>
+
+    <div id="profile" class="screen profileScreen">
+        <h1 id="profileHeader">Your Profile</h1>
+        <button id="addPostButton">+ Post</button>
+        <div id="profileGrid" class="grid"></div>
+    </div>
+
+    <div id="newPost" class="screen newPostScreen">
+        <input id="imageInput" type="file" accept="image/*">
+        <img id="imagePreview" src="" alt="Image Preview" style="display: none;">
+        <input id="newCaptionInput" type="text" placeholder="Add a caption">
+        <button id="submitPostButton">post!</button>
+    </div>
+
+    <div id="feed" class="screen feedScreen">
+        <h1>Feed</h1>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,33 +1,136 @@
-p {
-    color: blue;
-    font-size: 18px;
+:root {
+    --primary-color: #882523;
+    --secondary-color: #FFEBE7;
+    --text-color: #1C0F0D;
+    --font-family: 'Inter', sans-serif;
+    --font-header: 'Calistoga', serif;
+    --font-family-cursive: 'Caveat', cursive;
 }
 
 h1 {
-    color:cadetblue;
-    font-size: 30px;
+    font-family: var(--font-header);
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 200px;
 }
 
-button {
-    background-color: darkslategray;
-    color:whitesmoke;
-    padding: 10px 20px;
-    border: 5px solid black;
-    border-radius: 10px;
-    margin: 10px;
-    font-style: italic;
+.loadingText {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 20px;
 }
 
-input {
-    background-color: black;
-    color:white;
-    border: 2px solid gray;
-    border-radius: 8px;
-}
-
-.controls {
+.loginRow {
     display: flex;
-    flex-direction: row;
+    gap: 10px
+}
+
+.loginField {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.signInField {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.loginField::placeholder, .loginButton {
+    color: var(--secondary-color);
+    opacity: 0.80;
+}
+
+.loginButton {
+    background-color: var(--text-color);
+    margin-top: 10px;
+}
+
+.screen {
+    display: none;
+}
+
+.loadingScreen.active {
+    background-color: #eaeaeadb;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+    min-height: 100vh;
+}
+
+.loginScreen.active {
+    background-color: #eaeaeadb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-height: 100vh;
+}
+
+.signInScreen.active {
+    background-color: #eaeaeadb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-height: 100vh;
+}
+
+.signUpScreen.active {
+    background-color: #eaeaeadb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-height: 100vh;
+}
+
+.profileScreen.active {
+    background-color: #eaeaeadb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-height: 100vh;
+}
+
+.newPostScreen.active {
+    background-color: #eaeaeadb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-height: 100vh;
+}
+
+.feedScreen.active {
+    background-color: #eaeaeadb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-height: 100vh;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* fr means fraction of the img */
+    gap: 6px;
+}
+
+.grid img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 4px;
 }
