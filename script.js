@@ -1,7 +1,6 @@
 // 1) ALL VARIABLES
 let signInButton = document.getElementById("signInButton");
-
-let loginButton = document.getElementById("loginButton"); 
+let signUpButton = document.getElementById("signUpButton"); 
 
 let username = ""
 let password = ""
@@ -26,10 +25,6 @@ function showScreen(screenId) {
         screens[i].classList.remove("active");
     }
 
-    if (screenId === "signIn" ) {
-        signIn();
-    }
-
     if (screenId === "profile") {
         renderProfile();
     }
@@ -42,8 +37,9 @@ function showScreen(screenId) {
 }
 
 function signIn() {
-    username = document.getElementById("usernameInput").value;
-    password = document.getElementById("passwordInput").value;
+    let inputVal = document.getElementById("usernameSignIn").value.trim();
+    username = inputVal !== "" ? inputVal : "Guest";
+    password = document.getElementById("passwordSignIn").value;
     saveData();
 }
 
@@ -69,6 +65,8 @@ function createPost() {
 
 function renderProfile() {
     profileGrid.innerHTML = "";
+
+    document.getElementById("displayUsername").textContent = username;
 
     for (let i = 0; i < posts.length; i++) {
         let post = posts[i];
@@ -115,20 +113,18 @@ function loadData() {
 showScreen("loading");
 
 setTimeout(function() {
-    if (loadData()) {
-        showScreen("profile");
-    } else {
-        showScreen("login");
-    }
+    // if (loadData()) {
+    //     showScreen("profile");
+    // } else {
+    //     showScreen("login");
+    // }
+    showScreen("login");
 }, 3000);
 
 signInButton.addEventListener("click", function() {
-    showScreen("signIn");
+    signIn();
+    showScreen("profile");
 });
-
-loginButton.addEventListener("click", function() {
-    showScreen("profile")
-})
 
 postButton.addEventListener("click", function() {
     showScreen("newPost");

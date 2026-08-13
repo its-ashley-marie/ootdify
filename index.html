@@ -3,49 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ootidy</title>
+    <title>ootidify</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,500&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Caveat:wght@600&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="loading" class="screen loadingScreen">
-        <h1 id="loadingHeader">ootidify</h1>
-        <p id="loadingText" class="loadingText">Loading...</p>
-    </div>
+    <div class="phoneFrame">
+        <div class="iphoneNotch"></div>
 
-    <div id="login" class="screen loginScreen">
-        <h1 id="loginHeader">ootidify</h1>
-        <div class="loginRow">
-            <button id="signInButton">Sign In</button>
-            <button id="signUpButton">Sing Up</button>
+        <div id="loading" class="screen loadingScreen">
+            <h1 id="loadingHeader" class="animate__animated animate__headShake animate__infinite">
+                ootidify
+            </h1>
+            
+            <!-- From Uiverse.io by adamgiebl --> 
+            <div class="dots-container">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
         </div>
-    </div>
 
-    <div id="signIn" class="screen signInScreen">
-        <h1 id="signInHeader">Sign In</h1>
-        <input id="usernameInput" type="text" class="loginField" placeholder="Enter your username">
-        <input id="passwordInput" type="password" class="loginField" placeholder="Enter your password">
-        <button id="loginButton" class="loginButton">Login</button>
-    </div>
+        <div id="login" class="screen loginScreen">
+            <h1 id="loginHeader">ootidify</h1>
 
-    <div id="profile" class="screen profileScreen">
-        <h1 id="profileHeader">Your Profile</h1>
-        <button id="addPostButton">+ Post</button>
-        <div id="profileGrid" class="grid"></div>
-    </div>
+            <div class="loginBox">
+                <div class="loginInput">
+                    <p class="welcomeText">Welcome Back!</p>
+                    <input id="usernameSignIn" type="text" class="underlineInput" placeholder="Enter your username">
+                    <input id="passwordSignIn" type="password" class="underlineInput" placeholder="Enter your password">
+                </div>
 
-    <div id="newPost" class="screen newPostScreen">
-        <input id="imageInput" type="file" accept="image/*">
-        <img id="imagePreview" src="" alt="Image Preview" style="display: none;">
-        <input id="newCaptionInput" type="text" placeholder="Add a caption">
-        <button id="submitPostButton">post!</button>
-    </div>
+                <button id="signInButton" class="signInBtn">Sign In</button>
+                <button id="signUpButton" class="signUpBtn">Sign Up</button>
+            </div>
+        </div>
 
-    <div id="feed" class="screen feedScreen">
-        <h1>Feed</h1>
+        <div id="signUp" class="screen signUpScreen">
+            <h1 id="signUpHeader">Sign Up</h1>
+            <input id="usernameSignUp" type="text" class="loginField" placeholder="Enter your username">
+            <input id="passwordSignUp" type="password" class="loginField" placeholder="Enter your password">
+            <button id="SignUp" class="loginButton">Login</button>
+        </div>
+
+        <div id="profile" class="screen profileScreen">
+            <!-- Username profile picture -->
+            <!-- <div class="profilePic"></div> -->
+
+            <!-- Username display element -->
+            <h2 id="displayUsername" class="username">Guest</h2>
+            <button id="addPostButton">+ Post</button>
+            <div id="profileGrid" class="grid"></div>
+        </div>
+
+        <div id="newPost" class="screen newPostScreen">
+            <input id="imageInput" type="file" accept="image/*">
+            <img id="imagePreview" src="" alt="Image Preview" style="display: none;">
+            <input id="newCaptionInput" type="text" placeholder="Add a caption">
+            <button id="submitPostButton">post!</button>
+        </div>
+
+        <div id="feed" class="screen feedScreen">
+            <h1>Feed</h1>
+        </div>
     </div>
 
     <script src="script.js"></script>
